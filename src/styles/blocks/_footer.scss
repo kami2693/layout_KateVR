@@ -1,43 +1,71 @@
 .footer {
-  background-color: rgba(0, 0, 0, 1);
+  background: $c-black;
+
   padding-block: 45px 50px;
+
+  @include on-small-desktop {
+    padding-block: 40px;
+  }
 
   &__content {
     @include page-grid;
 
     @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__logo-img {
+    display: block;
+    margin-bottom: 15px;
+    grid-column: 1 / 2;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    grid-area: 2 / 1 / 4 / 2;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include on-tablet {
       align-items: center;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__details {
+    grid-area: 2 / 2 / 3 / 3;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__detail {
+    color: $c-text;
+
+    &:hover {
+      @include hover(color, $c-white);
     }
   }
 
   &__socials {
-    grid-column: 2 / -1;
+    grid-area: 3 / 2 / 4 / 3;
     display: flex;
-    justify-content: space-between;
-    margin-top: 22px;
     align-items: center;
-
-    @include on-tablet {
-      grid-column: -2 / -1;
-      margin: 0;
-    }
-
-    @include on-desktop {
-      grid-column: -3 / -1;
-      justify-content: flex-end;
-      gap: 18px;
-    }
-  }
-
-  &__link {
-    &:hover {
-      @include hover(transform, scale(1.2));
-    }
-  }
-
-  &__svg {
-    &:hover {
-      fill: $c-accent;
-    }
+    gap: 23px;
   }
 }

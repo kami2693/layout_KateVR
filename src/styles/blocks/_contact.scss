@@ -1,81 +1,91 @@
 .contact {
-  background-color: rgba(5, 4, 11, 1);
+  background: $c-bg-black;
+
+  @include section-padding-block;
 
   &__content {
+    display: flex;
+    flex-direction: column;
+
     @include on-tablet {
       @include page-grid;
     }
   }
 
-  &__question {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.94px;
-    color: $c-accent;
-    margin-bottom: 11px;
-
+  &__info {
     @include on-tablet {
-      grid-area: 1 / 1 / 2/ 4;
+      grid-column: span 3;
+    }
+
+    @include on-small-desktop {
+      grid-column: span 4;
     }
 
     @include on-desktop {
-      grid-area: 1 / 1 / 2 / 7;
-      margin-bottom: 13px;
+      grid-column: span 5;
     }
   }
 
-  &__input {
-    @include on-tablet {
-      grid-area: 1 / 4 / 5 / -1;
-    }
-
-    @include on-desktop {
-      grid-area: 1 / 7 / 5 / -1;
-    }
-  }
-
-  &__text {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    color: $c-text;
-
-    @include on-tablet {
-      grid-area: 3 / 1 / 4 / 4;
-      margin-bottom: 76px;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    @include on-desktop {
-      grid-area: 3 / 1 / 4 / 7;
-    }
-  }
-
-  &__button-wrapper {
+  &__form {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 48px;
+    flex-direction: column;
+    gap: 24px;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-small-desktop {
+      grid-column: 7 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / -1;
+    }
   }
 
-  &__button-top {
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__manager--in {
+    display: none;
+    margin: 50px 0 76px;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__manager--out {
+    margin-top: 30px;
+    order: 1;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__details {
     display: none;
 
-    @include hover(transform, scale(1.2));
-
     @include on-tablet {
-      background-image: url('../images/top-button.svg');
-      width: 48px;
-      height: 48px;
-      display: inline-block;
-      background-repeat: no-repeat;
-      background-size: cover;
-      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
-      &:hover {
-        background-image: url('../images/top-button-hover.svg');
-      }
+  &__detail {
+    color: $c-text;
+
+    &:hover {
+      @include hover(color, $c-white);
+    }
+  }
+
+  &__container {
+    @include on-small-desktop {
+      overflow: unset;
     }
   }
 }

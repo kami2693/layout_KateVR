@@ -1,9 +1,0 @@
-.why {
-  &__content {
-    @include on-desktop {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}

@@ -1,197 +1,84 @@
 .top-bar {
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 18px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    @include on-tablet {
-      padding-block: 30px 55px;
-    }
+  padding: 18px 0 14px;
 
-    @include on-desktop {
-      padding-block: 47px 101px;
-    }
+  @include on-tablet {
+    padding-bottom: 0;
+    margin-bottom: 55px;
+  }
 
-    &--aside {
-      padding-block: 19px 31px;
+  @include on-small-desktop {
+    margin-bottom: 116px;
+  }
 
-      @include on-tablet {
-        padding-block: 30px;
-      }
-
-      @include on-desktop {
-        display: none;
-      }
-    }
-
-    &--desktop {
-      display: none;
-
-      @include on-desktop {
-        padding-block: 65px 114px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-
-    &--menu {
-      justify-content: end;
-      padding-block: 20px 38px;
-
-      @include on-tablet {
-        padding-block: 34px 57px;
-      }
-    }
-
-    &--language {
-      padding-block: 20px 38px;
-
-      @include on-tablet {
-        padding-block: 34px 57px;
-      }
-    }
-
-    &--help {
-      padding-block: 20px 31px;
-      justify-content: end;
-
-      @include on-tablet {
-        padding-block: 34px 51px;
-      }
-
-      @include on-desktop {
-        margin-inline: -110px;
-        padding-block: 18px 25px;
-        padding-inline: 18px;
-      }
-    }
-
-    &--faq {
-      padding-block: 20px 31px;
-      justify-content: end;
-
-      @include on-tablet {
-        padding-block: 34px 57px;
-      }
-
-      @include on-desktop {
-        padding-block: 18px 25px;
-        padding-inline: 18px;
-        margin-inline: -110px;
-      }
-    }
+  @include on-desktop {
+    margin-bottom: 245px;
   }
 
   &__left {
     display: flex;
     align-items: center;
-    gap: 35px;
-  }
-
-  &__right {
-    display: flex;
-    align-items: center;
-    gap: 37px;
+    gap: 34px;
   }
 
   &__logo {
+    display: block;
     width: 58px;
     height: 12px;
-    display: flex;
+    background-image: url('../images/icons/logo-mb.svg');
 
-    @include hover(transform, scale(1.2));
-
-    &--footer {
-      grid-column: 1 / -1;
-      margin-bottom: 15px;
-
-      @include on-tablet {
-        grid-column: 1 / 2;
-        margin: 0;
-        width: 69px;
-        height: 14px;
-      }
-
-      @include on-desktop {
-        width: 74px;
-        height: 14px;
-      }
-    }
+    @include hover(transform, scale(1.1));
 
     @include on-tablet {
       width: 67px;
       height: 14px;
+      background-image: url('../images/icons/logo-tb.svg');
     }
 
-    @include on-desktop {
-      width: 78px;
+    @include on-small-desktop {
+      width: 77px;
       height: 16px;
+      background-image: url('../images/icons/logo.svg');
     }
   }
 
-  &__logo-img {
-    width: 58px;
-    height: 12px;
+  &__link-menu {
+    @include hover(transform, scale(1.1));
 
-    @include on-tablet {
-      width: 67px;
-      height: 14px;
-    }
-  }
+    z-index: 2;
 
-  &__logo-menu {
-    background-image: url('../images/logo-menu.svg');
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    @include on-tablet {
-      width: 29.25px;
-      height: 20px;
-    }
-
-    @include on-desktop {
+    @include on-small-desktop {
       display: none;
     }
+  }
 
-    @include hover(transform, scale(1.2));
+  &__lang {
+    display: none;
 
-    &:hover {
-      background-image: url('../images/logo-menu-hover.svg');
+    @include on-small-desktop {
+      display: block;
     }
   }
 
-  &__menu-img {
-    @include on-tablet {
-      width: 29.25px;
-      height: 20px;
+  &__menu {
+    display: none;
+
+    @include on-small-desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 37px;
     }
   }
 
-  &__logo-close {
-    background-image: url('../images/icon-close.svg');
-    width: 17px;
-    height: 17px;
-    background-repeat: no-repeat;
-    background-size: cover;
+  &__btn-buy {
+    display: none;
 
-    &:hover {
-      background-image: url('../images/icon-close-hover.svg');
-    }
-
-    @include hover(transform, scale(1.2));
-  }
-
-  &__logo-row {
-    @include hover(transform, scale(1.2));
-  }
-
-  &__logo-row-svg {
-    &:hover {
-      stroke: $c-accent;
+    @include on-small-desktop {
+      display: block;
     }
   }
 }
